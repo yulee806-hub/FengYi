@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>丰溢粮油有限公司 - 黑龙江与俄罗斯粮源直供 · 辽宁营口港发运基地</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        agri: {
+                            900: '#0c2718',
+                            800: '#154326', // Deep Grain Forest Green
+                            700: '#235e38',
+                            600: '#34814f',
+                            100: '#e8f4ec',
+                            50: '#f3f9f5'
+                        },
+                        harvest: {
+                            500: '#e5a024', // Golden Wheat Accent
+                            600: '#cd8b18',
+                            100: '#fdf6e7'
+                        },
+                        yingkou: '#1e3a8a', // Deep Blue Port Navy
+                        slateBg: '#f8fafbc0'
+                    },
+                    fontFamily: {
+                        sans: ['PingFang SC', 'Microsoft YaHei', 'Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "丰溢粮油有限公司",
+          "alternateName": "丰溢粮油营口港发运中心",
+          "logo": "logo.jpg",
+          "description": "丰溢粮油有限公司主营黑龙江黑土地优质非转基因大豆、二等高容重玉米、俄罗斯进口非转基因大豆及玉米，依托辽宁营口港/鲅鱼圈基地提供仓储及散粮南粮北运服务。",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "鲅鱼圈区港口物流园区88号丰溢粮油大厦",
+            "addressLocality": "营口市",
+            "addressRegion": "辽宁省",
+            "addressCountry": "CN"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+86-417-8888-6666",
+            "contactType": "国内大宗贸易部"
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "丰溢黑龙江一等高蛋白非转基因大豆",
+          "description": "丰溢粮油黑龙江黑土原产地非转基因食用级大豆，粗蛋白≥41.5%，水分≤13.0%，支持营口港集装箱发运至全国。",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "CNY",
+            "price": "3950.00",
+            "unitText": "吨"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(21, 67, 38, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .ticker-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .ticker-move {
+            display: inline-block;
+            animation: ticker 30s linear infinite;
+        }
+        .ticker-move:hover {
+            animation-play-state: paused;
+        }
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #154326;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800 font-sans antialiased">
+
+    <!-- TOP UTILITY BAR -->
+    <div class="bg-agri-900 text-gray-300 text-xs py-2 px-4 border-b border-agri-700">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center gap-1.5 font-bold text-white">
+                    <img src="watermarked_img_16954814780196787762.jpg" alt="丰溢粮油标志" class="w-5 h-5 rounded-full object-cover border border-harvest-500"> 
+                    丰溢粮油有限公司
+                </span>
+                <span class="text-gray-600">|</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-truck-ramp-box text-harvest-500"></i> 营口港/鲅鱼圈集装箱发运基地</span>
+                <span class="hidden md:inline text-gray-600">|</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-seedling text-green-400"></i> 原产地：黑龙江农场直采 & 俄罗斯边贸关单粮</span>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+                <span class="text-gray-300"><i class="fa-solid fa-calculator text-harvest-500"></i> 支持基差交易 (DCE大商所点价)</span>
+                <span class="bg-agri-800 px-2.5 py-0.5 rounded text-white font-bold text-[11px] border border-agri-600">
+                    <i class="fa-solid fa-phone text-harvest-500"></i> 丰溢直拨: 400-888-9988
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <header class="sticky top-0 z-40 glass-nav text-white shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 py-2.5 flex justify-between items-center">
+            <!-- Brand Logo & Name Area with Official Corporate Image -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="bg-white p-1 rounded-xl shadow-md border border-amber-300/50 group-hover:scale-105 transition">
+                    <img src="watermarked_img_16954814780196787762.jpg" alt="丰溢粮油有限公司徽标" class="w-11 h-11 object-contain rounded-lg">
+                </div>
+                <div>
+                    <div class="font-extrabold text-xl tracking-wider leading-tight flex items-center gap-1.5">
+                        丰溢粮油 <span class="text-harvest-500 font-bold text-xs bg-amber-400/20 px-2 py-0.5 rounded border border-harvest-500/30">有限公司</span>
+                    </div>
+                    <div class="text-[10px] text-gray-300 tracking-wider">FENGYI GRAIN & OIL CO., LTD. · 营口港发运中心</div>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium">
+                <a href="#dce-ticker" class="hover:text-harvest-500 transition flex items-center gap-1">
+                    <i class="fa-solid fa-chart-line text-xs text-harvest-500"></i> 大商所基差
+                </a>
+                <a href="#products" class="hover:text-harvest-500 transition">丰溢粮种指标</a>
+                <a href="#media-gallery" class="hover:text-harvest-500 transition flex items-center gap-1">
+                    <i class="fa-solid fa-video text-xs text-harvest-500"></i> 基地实拍
+                </a>
+                <a href="#freight-calculator" class="hover:text-harvest-500 transition">运费/平仓价算板</a>
+                <a href="#ai-assistant" class="hover:text-harvest-500 transition">丰溢AI客服</a>
+            </nav>
+
+            <!-- Call to Action Buttons -->
+            <div class="flex items-center space-x-3">
+                <button onclick="toggleWeChatModal()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-3.5 py-2 rounded-lg text-xs transition flex items-center gap-1.5 shadow">
+                    <i class="fa-brands fa-weixin text-sm"></i> 微信加好友
+                </button>
+                <button onclick="openRfqModal()" class="bg-harvest-500 hover:bg-harvest-600 text-agri-900 font-bold px-4 py-2 rounded-lg text-xs shadow-md transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-clipboard-list"></i> 快速询价单
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- REAL-TIME DCE SPOT & BASIS TICKER BAR -->
+    <section id="dce-ticker" class="bg-agri-800 border-b border-agri-700 py-2.5 text-xs text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto flex items-center px-4">
+            <div class="bg-harvest-500 text-agri-900 font-bold px-3 py-1 rounded text-[11px] flex items-center gap-1.5 mr-3 shrink-0 z-10 shadow">
+                <span class="w-2 h-2 rounded-full bg-red-600 animate-ping"></span> 丰溢粮油 · 大商所 (DCE) 实时点价参考
+            </div>
+            
+            <div class="ticker-wrap w-full">
+                <div class="ticker-move space-x-8" id="tickerContainer">
+                    <!-- Javascript populates live domestic pricing -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-agri-900 text-white py-16 px-4 overflow-hidden">
+        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#e5a024_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 bg-agri-800/90 border border-agri-600 px-3.5 py-1.5 rounded-full text-xs text-harvest-500 font-bold">
+                    <i class="fa-solid fa-award"></i> 丰溢粮油有限公司 · 原产地直供：黑龙江农场 + 俄罗斯边贸 | 营口港集装箱发运
+                </div>
+                
+                <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+                    丰溢粮油 · 黑俄粮源直供 <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-harvest-500 to-amber-200">南粮北运 · 营口港集装箱基地</span>
+                </h1>
+                
+                <p class="text-gray-300 text-sm sm:text-base max-w-2xl font-normal leading-relaxed">
+                    <b>丰溢粮油有限公司</b>专为国内饲料厂、深加工企业及粮油贸易商提供<b>黑龙江非转基因食用大豆、二等高容重玉米</b>及<b>俄罗斯进口非转基因粮源</b>。依托辽宁营口港/鲅鱼圈基地，提供散粮装船及集装箱高效发运，全程水分容重严控，可按大商所点价结算。
+                </p>
+
+                <!-- Core Advantage Indicators -->
+                <div class="grid grid-cols-3 gap-4 pt-2 border-t border-agri-700/80 max-w-xl">
+                    <div class="bg-agri-800/50 p-3 rounded-xl border border-agri-700">
+                        <div class="text-xl sm:text-2xl font-black text-harvest-500">黑龙江 / 俄罗斯</div>
+                        <div class="text-[11px] text-gray-400">丰溢核心一手粮源</div>
+                    </div>
+                    <div class="bg-agri-800/50 p-3 rounded-xl border border-agri-700">
+                        <div class="text-xl sm:text-2xl font-black text-harvest-500">辽宁营口港</div>
+                        <div class="text-[11px] text-gray-400">丰溢集装箱平仓基地</div>
+                    </div>
+                    <div class="bg-agri-800/50 p-3 rounded-xl border border-agri-700">
+                        <div class="text-xl sm:text-2xl font-black text-harvest-500">散粮 / 集装箱</div>
+                        <div class="text-[11px] text-gray-400">门到门定制打包</div>
+                    </div>
+                </div>
+
+                <!-- Call To Action -->
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#products" class="bg-harvest-500 hover:bg-harvest-600 text-agri-900 font-bold px-6 py-3 rounded-xl text-sm shadow-lg transition flex items-center gap-2">
+                        查看丰溢粮种与指标 <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                    <a href="#freight-calculator" class="bg-yingkou hover:bg-blue-900 text-white font-semibold px-6 py-3 rounded-xl text-sm border border-blue-700 transition flex items-center gap-2 shadow-lg">
+                        <i class="fa-solid fa-truck-arrow-right text-harvest-500"></i> 测算全国送达平仓价
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Domestic Featured Offer Card -->
+            <div class="lg:col-span-5">
+                <div class="bg-agri-800/95 border border-agri-600 rounded-2xl p-6 shadow-2xl backdrop-blur-md relative">
+                    <div class="absolute -top-3 right-6 bg-harvest-500 text-agri-900 text-xs font-black px-3 py-1 rounded-full uppercase shadow">
+                        丰溢直营 · 黑龙江主产区
+                    </div>
+                    
+                    <div class="flex items-center space-x-2 text-xs text-harvest-500 font-bold mb-1">
+                        <i class="fa-solid fa-seedling"></i> 2026年黑土新粮
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">丰溢·黑龙江一等高蛋白非转基因大豆</h3>
+                    <p class="text-xs text-gray-300 mb-4">蛋白含量高，适合做蛋白粉、豆腐、豆制品加工厂</p>
+                    
+                    <div class="space-y-2 text-xs">
+                        <div class="flex justify-between py-1.5 border-b border-agri-700">
+                            <span class="text-gray-400">粗蛋白质 (干基)</span>
+                            <span class="font-bold text-green-400">≥ 41.5%</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-agri-700">
+                            <span class="text-gray-400">水分控制</span>
+                            <span class="font-semibold text-white">≤ 13.0%</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-agri-700">
+                            <span class="text-gray-400">完整粒 / 杂质</span>
+                            <span class="font-semibold text-white">99.5%纯净 / 杂质≤0.5%</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-agri-700">
+                            <span class="text-gray-400">营口港平仓车船板参考价</span>
+                            <span class="font-black text-harvest-500 text-base" id="heroPrice">¥3,950 / 吨</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 grid grid-cols-2 gap-2">
+                        <button onclick="prepopulateRfq('丰溢黑龙江一等非转基因大豆')" class="bg-harvest-500 hover:bg-harvest-600 text-agri-900 font-bold py-2.5 rounded-lg text-xs transition flex items-center justify-center gap-1">
+                            <i class="fa-solid fa-paper-plane"></i> 索取丰溢实盘样粮
+                        </button>
+                        <button onclick="toggleWeChatModal()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 rounded-lg text-xs transition flex items-center justify-center gap-1">
+                            <i class="fa-brands fa-weixin"></i> 微信加经理
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RICH MEDIA SECTION: FARM, RUSSIA BORDER & YINGKOU PORT -->
+    <section id="media-gallery" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-agri-800 text-xs font-black uppercase tracking-widest bg-agri-100 px-3 py-1 rounded-full border border-agri-200">一手源头 · 丰溢粮油实景</span>
+            <h2 class="text-3xl font-extrabold text-gray-900 mt-2">黑龙江种植农场 · 俄罗斯边贸 · 营口港发运基地</h2>
+            <p class="text-gray-600 text-sm mt-2">丰溢粮油有限公司从黑龙江黑土地大机械采收，到俄罗斯边境口岸通关，再到辽宁营口港集装箱压箱装运，全流程实拍。</p>
+        </div>
+
+        <!-- Video Highlight Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <!-- Video Card 1 -->
+            <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition group">
+                <div class="relative h-48 bg-gray-900 overflow-hidden cursor-pointer" onclick="openVideoModal('丰溢黑龙江大规模农场秋收作业实拍', 'farm')">
+                    <img src="https://placehold.co/600x400/154326/ffffff?text=%E4%B8%B0%E6%BA%A2%E7%B2%AE%E6%B2%B9%C2%B7%E9%BB%91%E9%BE%99%E6%B1%9F%E5%86%9C%EB%9C%BA%E7%A7%8B%E6%94%B6" alt="黑龙江农场" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-harvest-500 rounded-full flex items-center justify-center text-agri-900 text-lg shadow-lg group-hover:scale-110 transition">
+                                <i class="fa-solid fa-play ml-0.5"></i>
+                            </div>
+                            <div>
+                                <span class="bg-harvest-500/80 text-agri-900 text-[10px] font-bold px-2 py-0.5 rounded">实拍视频</span>
+                                <h4 class="text-white font-bold text-sm">丰溢粮油黑龙江大农场联合收割</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 bg-white">
+                    <p class="text-xs text-gray-600">丰溢粮油黑龙江黑土核心区大型收割机一体化作业，保证新粮色泽光洁，水分均匀。</p>
+                </div>
+            </div>
+
+            <!-- Video Card 2 -->
+            <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition group">
+                <div class="relative h-48 bg-gray-900 overflow-hidden cursor-pointer" onclick="openVideoModal('丰溢俄罗斯非转基因大豆口岸通关与检测', 'russia')">
+                    <img src="https://placehold.co/600x400/235e38/ffffff?text=%E4%B8%B0%E6%BA%A2%E7%B2%AE%E6%B2%B9%C2%B7%E4%BB%81%E7%BD%97%E6%96%AF%E8%BE%B9%E8%B4%B8" alt="俄罗斯边贸大豆" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-harvest-500 rounded-full flex items-center justify-center text-agri-900 text-lg shadow-lg group-hover:scale-110 transition">
+                                <i class="fa-solid fa-play ml-0.5"></i>
+                            </div>
+                            <div>
+                                <span class="bg-harvest-500/80 text-agri-900 text-[10px] font-bold px-2 py-0.5 rounded">实拍视频</span>
+                                <h4 class="text-white font-bold text-sm">丰溢俄罗斯边境口岸换装与海关抽检</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 bg-white">
+                    <p class="text-xs text-gray-600">俄罗斯黑土远东产区非转基因大豆，通过绥芬河/黑河口岸入关，丰溢专人双重检疫。</p>
+                </div>
+            </div>
+
+            <!-- Video Card 3 -->
+            <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition group">
+                <div class="relative h-48 bg-gray-900 overflow-hidden cursor-pointer" onclick="openVideoModal('丰溢粮油辽宁营口港集装箱压箱装船现场', 'yingkou')">
+                    <img src="https://placehold.co/600x400/1e3a8a/ffffff?text=%E4%B8%B0%E6%BA%A2%E7%B2%AE%E6%B2%B9%C2%B7%E8%90%A5%E5%8F%A3%E6%B8%AF%E7%AE%B1%E8%A3%85" alt="营口港发运" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-yingkou text-white rounded-full flex items-center justify-center text-lg shadow-lg group-hover:scale-110 transition">
+                                <i class="fa-solid fa-play ml-0.5"></i>
+                            </div>
+                            <div>
+                                <span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">物流实拍</span>
+                                <h4 class="text-white font-bold text-sm">丰溢粮油营口港/鲅鱼圈集装箱装船</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 bg-white">
+                    <p class="text-xs text-gray-600">丰溢粮油营口港专业散改集/吨袋集装箱车船板压箱，保障散粮无破损发往南方各港。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo Grid Section -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-camera-retro text-harvest-500"></i> 丰溢粮油原产地与港口实拍档案
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="relative group overflow-hidden rounded-xl bg-gray-100">
+                    <img src="https://placehold.co/400x300/154326/ffffff?text=%E4%B8%B0%E6%BA%A2%E9%BB%91%E9%BE%99%E6%B1%9F%E7%94%B0%E5%9D%97" class="w-full h-36 object-cover group-hover:scale-110 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-end p-2 text-[11px] text-white font-bold">
+                        丰溢黑龙江黑土大豆种植田
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl bg-gray-100">
+                    <img src="https://placehold.co/400x300/235e38/ffffff?text=%E4%B8%B0%E6%BA%A2%E4%BB%81%E7%BD%97%E6%96%AF%E5%A4%A7%E8%B1%86" class="w-full h-36 object-cover group-hover:scale-110 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-end p-2 text-[11px] text-white font-bold">
+                        丰溢俄罗斯非转基因大豆籽粒
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl bg-gray-100">
+                    <img src="https://placehold.co/400x300/e5a024/ffffff?text=%E4%B8%B0%E6%BA%A2%E9%AB%98%E5%AE%B9%E9%87%8D%E7%8E%89%E7%B1%B3" class="w-full h-36 object-cover group-hover:scale-110 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-end p-2 text-[11px] text-white font-bold">
+                        丰溢黑龙江二等高容重黄玉米
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl bg-gray-100">
+                    <img src="https://placehold.co/400x300/1e3a8a/ffffff?text=%E4%B8%B0%E6%BA%A2%E8%90%A3%E5%8F%A3%E6%B8%AF%E5%A0%86%E5%9C%BA" class="w-full h-36 object-cover group-hover:scale-110 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-end p-2 text-[11px] text-white font-bold">
+                        丰溢营口港集装箱专线堆场
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOMESTIC GRAIN PRODUCTS SHOWCASE SECTION -->
+    <section id="products" class="max-w-7xl mx-auto px-4 py-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+            <div>
+                <span class="text-agri-800 text-xs font-black uppercase tracking-widest block mb-1">丰溢粮种目录 · 营口港发运</span>
+                <h2 class="text-3xl font-extrabold text-gray-900">丰溢粮油黑龙江及俄罗斯粮源指标</h2>
+            </div>
+            <!-- Category Filter Tabs -->
+            <div class="mt-4 md:mt-0 flex flex-wrap gap-2">
+                <button onclick="filterProducts('all')" class="filter-btn active bg-agri-800 text-white text-xs font-bold px-4 py-2 rounded-lg transition" data-cat="all">全部粮种</button>
+                <button onclick="filterProducts('soy-hlj')" class="filter-btn bg-white text-gray-700 border border-gray-300 text-xs font-bold px-4 py-2 rounded-lg transition" data-cat="soy-hlj">黑龙江大豆</button>
+                <button onclick="filterProducts('soy-rus')" class="filter-btn bg-white text-gray-700 border border-gray-300 text-xs font-bold px-4 py-2 rounded-lg transition" data-cat="soy-rus">俄罗斯大豆/玉米</button>
+                <button onclick="filterProducts('corn')" class="filter-btn bg-white text-gray-700 border border-gray-300 text-xs font-bold px-4 py-2 rounded-lg transition" data-cat="corn">黑龙江玉米</button>
+            </div>
+        </div>
+
+        <!-- Product Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="productGrid">
+            <!-- JavaScript Populates Product Cards -->
+        </div>
+    </section>
+
+    <!-- DOMESTIC FREIGHT & DELIVERED PRICE CALCULATOR -->
+    <section id="freight-calculator" class="bg-agri-900 text-white py-16 px-4 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="bg-harvest-500/20 text-harvest-500 text-xs font-bold px-3 py-1 rounded-full border border-harvest-500/30">丰溢物流直达算板</span>
+                <h2 class="text-3xl font-bold mt-2">营口港发运 · 全国到厂平仓价算板</h2>
+                <p class="text-gray-300 text-xs sm:text-sm mt-2">选择丰溢粮源产地、运往省份及散粮/集装箱包装，系统自动测算营口港平仓价及送达综合单价。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-agri-800 border border-agri-700 rounded-2xl p-6 sm:p-8 shadow-2xl">
+                <!-- Controls Form -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase mb-2">1. 选择粮种与产地</label>
+                        <select id="calcProduct" onchange="calculateDomesticFreight()" class="w-full bg-agri-900 border border-agri-600 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-harvest-500">
+                            <option value="3950">丰溢·黑龙江一等食用非转基因大豆 (¥3,950/吨 营口平仓)</option>
+                            <option value="3820">丰溢·俄罗斯进口非转基因大豆 (¥3,820/吨 营口平仓)</option>
+                            <option value="2320">丰溢·黑龙江二等高容重黄玉米 (¥2,320/吨 营口平仓)</option>
+                            <option value="2280">丰溢·俄罗斯边贸二等黄玉米 (¥2,280/吨 营口平仓)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="text-xs font-bold text-gray-300 uppercase">2. 发货数量 (吨 MT)</label>
+                            <span class="text-harvest-500 font-bold text-lg" id="volumeDisplay">1,000 吨</span>
+                        </div>
+                        <input type="range" id="calcVolume" min="100" max="10000" step="100" value="1000" oninput="calculateDomesticFreight()" class="w-full h-2 bg-agri-900 rounded-lg appearance-none cursor-pointer accent-harvest-500">
+                        <div class="flex justify-between text-[10px] text-gray-400 mt-1">
+                            <span>100 吨 (集装箱起发)</span>
+                            <span>5,000 吨</span>
+                            <span>10,000 吨 (散船大单)</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-2">3. 送达省份/销区港口</label>
+                            <select id="calcDestination" onchange="calculateDomesticFreight()" class="w-full bg-agri-900 border border-agri-600 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-harvest-500">
+                                <option value="110">山东省 (潍坊/青岛/日照港 运费 +¥110/吨)</option>
+                                <option value="160">广东省 (广州蛇口/南沙港 海运 +¥160/吨)</option>
+                                <option value="140">江苏/浙江 (南通/宁波港 +¥140/吨)</option>
+                                <option value="180">四川/重庆 (长江水运到港 +¥180/吨)</option>
+                                <option value="150">湖北/湖南 (武汉/岳阳港 +¥150/吨)</option>
+                                <option value="0">辽宁营口港自提 (平仓价 +¥0/吨)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-2">4. 打包与运输方式</label>
+                            <select id="calcPackaging" onchange="calculateDomesticFreight()" class="w-full bg-agri-900 border border-agri-600 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-harvest-500">
+                                <option value="30">营口港集装箱封箱 (护防潮加固 +¥30/吨)</option>
+                                <option value="0">散粮舱直装 (无包装加价 +¥0/吨)</option>
+                                <option value="45">50kg PP编织袋装 (人工包装 +¥45/吨)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result Card -->
+                <div class="lg:col-span-5 bg-agri-900 border border-agri-700 rounded-xl p-6 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4 border-b border-agri-800 pb-2">丰溢粮油测算明细 (单位: 人民币)</h4>
+                        
+                        <div class="space-y-3 text-xs sm:text-sm">
+                            <div class="flex justify-between text-gray-400">
+                                <span>营口港车船板平仓底价:</span>
+                                <span class="text-white" id="outBasePrice">¥3,950 / 吨</span>
+                            </div>
+                            <div class="flex justify-between text-gray-400">
+                                <span>海运/水运至销区运费:</span>
+                                <span class="text-white" id="outFreightPrice">¥110 / 吨</span>
+                            </div>
+                            <div class="flex justify-between text-gray-400">
+                                <span>集装箱/打包加价:</span>
+                                <span class="text-white" id="outPackPrice">¥30 / 吨</span>
+                            </div>
+                            <div class="border-t border-agri-800 my-2 pt-2 flex justify-between font-bold text-sm sm:text-base">
+                                <span class="text-harvest-500">预估送达综合单价:</span>
+                                <span class="text-harvest-500 font-black" id="outUnitPrice">¥4,090 / 吨</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-agri-800">
+                        <div class="text-xs text-gray-400 mb-1">合同预估总金额:</div>
+                        <div class="text-3xl font-black text-white mb-4" id="outTotalValue">¥4,090,000</div>
+                        <button onclick="requestQuoteFromCalc()" class="w-full bg-harvest-500 hover:bg-harvest-600 text-agri-900 font-bold py-3 rounded-lg text-sm transition text-center shadow-lg">
+                            锁定此价格并向丰溢粮油提交询价
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI GRAIN CONSULTANT CHAT MODULE -->
+    <section id="ai-assistant" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="bg-agri-800 rounded-2xl p-6 sm:p-8 text-white shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-4">
+                <span class="bg-harvest-500 text-agri-900 text-[10px] font-black px-2.5 py-1 rounded uppercase tracking-wider">智能粮情客服</span>
+                <div class="flex items-center gap-3">
+                    <img src="watermarked_img_16954814780196787762.jpg" alt="丰溢粮油" class="w-10 h-10 rounded-full border-2 border-harvest-500 bg-white p-0.5">
+                    <h2 class="text-2xl font-bold">丰溢粮油 AI 粮情问答助手</h2>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    随时查询丰溢黑龙江大豆粗蛋白、水分指标、俄罗斯大豆关单手续及营口港集装箱发运周期。
+                </p>
+                <div class="space-y-2">
+                    <p class="text-xs font-semibold text-gray-400">点击快捷提问：</p>
+                    <div class="flex flex-col gap-2">
+                        <button onclick="askAiPrompt('丰溢黑龙江大豆粗蛋白能达到多少？水分怎么保证？')" class="text-left text-xs bg-agri-700 hover:bg-agri-600 p-2.5 rounded-lg transition border border-agri-600 text-gray-200">
+                            ❓ "丰溢黑龙江大豆粗蛋白能达到多少？水分怎么保证？"
+                        </button>
+                        <button onclick="askAiPrompt('丰溢粮油俄罗斯进口大豆有海关检疫证吗？是不是非转基因？')" class="text-left text-xs bg-agri-700 hover:bg-agri-600 p-2.5 rounded-lg transition border border-agri-600 text-gray-200">
+                            ❓ "丰溢粮油俄罗斯进口大豆有海关检疫证吗？是不是非转基因？"
+                        </button>
+                        <button onclick="askAiPrompt('丰溢粮油在营口港发集装箱到广东和山东要几天？')" class="text-left text-xs bg-agri-700 hover:bg-agri-600 p-2.5 rounded-lg transition border border-agri-600 text-gray-200">
+                            ❓ "丰溢粮油在营口港发集装箱到广东和山东要几天？"
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simulated Chat Window -->
+            <div class="lg:col-span-7 bg-agri-900 border border-agri-700 rounded-xl p-4 flex flex-col h-[380px]">
+                <div class="border-b border-agri-800 pb-3 mb-3 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <img src="watermarked_img_16954814780196787762.jpg" alt="丰溢AI" class="w-5 h-5 rounded-full bg-white p-0.5">
+                        <span class="text-xs font-bold text-gray-200">丰溢粮油有限公司 · AI 粮情客服</span>
+                    </div>
+                    <span class="text-[10px] text-gray-500">知识库已更新至 2026年9月</span>
+                </div>
+
+                <div class="flex-1 overflow-y-auto space-y-3 pr-2 text-xs" id="chatHistory">
+                    <div class="bg-agri-800/80 p-3 rounded-lg border border-agri-700 text-gray-200 max-w-[90%]">
+                        您好！我是<b>丰溢粮油有限公司</b>的 AI 智能粮情客服。关于黑龙江大豆、二等玉米、俄罗斯边贸粮及营口港集装箱发运问题，请随时问我！
+                    </div>
+                </div>
+
+                <form onsubmit="handleAiSubmit(event)" class="mt-3 flex gap-2 pt-2 border-t border-agri-800">
+                    <input type="text" id="chatInput" placeholder="输入关于粗蛋白、水分、容重、营口港发运的问题..." class="flex-1 bg-agri-800 border border-agri-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-harvest-500">
+                    <button type="submit" class="bg-harvest-500 hover:bg-harvest-600 text-agri-900 font-bold px-4 py-2 rounded-lg text-xs transition">
+                        发送
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLAYABLE VIDEO PLAYER MODAL -->
+    <div id="videoModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-agri-900 border border-agri-700 rounded-2xl max-w-3xl w-full p-6 shadow-2xl relative text-white">
+            <button onclick="closeModal('videoModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-harvest-500" id="videoModalTitle">
+                <i class="fa-solid fa-circle-play"></i> 丰溢粮油实拍视频播放
+            </h3>
+            
+            <div class="relative aspect-video bg-black rounded-xl overflow-hidden flex items-center justify-center border border-agri-700">
+                <div class="text-center p-8 space-y-4">
+                    <div class="w-16 h-16 bg-harvest-500 text-agri-900 rounded-full flex items-center justify-center text-2xl font-black mx-auto shadow-lg animate-bounce">
+                        <i class="fa-solid fa-play ml-1"></i>
+                    </div>
+                    <div class="text-sm font-bold text-gray-200" id="videoSimLabel">正在载入黑龙江农场秋收高清视频...</div>
+                    <p class="text-xs text-gray-400 max-w-md">丰溢粮油现场实拍：机械化收割、杂质风选、卡车接粮及营口港集装箱封箱过程。</p>
+                </div>
+            </div>
+            
+            <div class="mt-4 flex justify-between items-center text-xs text-gray-400 border-t border-agri-800 pt-3">
+                <span>拍摄基地: 丰溢黑龙江农场 / 辽宁营口港</span>
+                <button onclick="closeModal('videoModal'); openRfqModal();" class="bg-harvest-500 text-agri-900 font-bold px-4 py-1.5 rounded">对视频中粮种询价</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WECHAT SCAN QR MODAL -->
+    <div id="wechatModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl relative text-center">
+            <button onclick="closeModal('wechatModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-lg font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-3">
+                <i class="fa-brands fa-weixin"></i>
+            </div>
+            <h3 class="font-bold text-gray-900 text-lg">微信扫码联系丰溢粮油经理</h3>
+            <p class="text-xs text-gray-500 mb-4">实时获取今日营口港平仓现货价格与丰溢锁价合同</p>
+
+            <img src="https://placehold.co/220x220/154326/ffffff?text=%E4%B8%B0%E6%BA%A2%E7%B2%AE%E6%B2%B9%C2%B7%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81" alt="微信二维码" class="mx-auto border rounded-xl shadow-md mb-3">
+            
+            <div class="bg-slate-100 p-2 rounded text-xs font-mono text-gray-700 mb-2">
+                微信号: <span class="font-bold text-agri-800">fengyi_grain_2026</span>
+            </div>
+            <div class="text-[10px] text-gray-400">支持发送指标检测报告电子档及丰溢样粮寄送</div>
+        </div>
+    </div>
+
+    <!-- FAST RFQ MODAL -->
+    <div id="rfqModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+            <button onclick="closeModal('rfqModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-lg font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-xl font-bold text-gray-900 mb-1">提交丰溢粮油大宗采购询价单</h3>
+            <p class="text-xs text-gray-500 mb-4">填写您的需求，丰溢粮油营口港发运经理将在2小时内与您联系。</p>
+
+            <form onsubmit="handleRfqSubmit(event)" class="space-y-3 text-xs">
+                <div>
+                    <label class="block font-bold text-gray-700 mb-1">意向粮种与产地</label>
+                    <input type="text" id="rfqCommodity" required class="w-full bg-gray-50 border border-gray-300 rounded p-2.5 text-gray-900 focus:outline-none focus:border-agri-800">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-bold text-gray-700 mb-1">采购数量 (吨)</label>
+                        <input type="number" id="rfqVolume" placeholder="例: 1000" required class="w-full bg-gray-50 border border-gray-300 rounded p-2.5 text-gray-900">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-gray-700 mb-1">发运方式</label>
+                        <select class="w-full bg-gray-50 border border-gray-300 rounded p-2.5 text-gray-900">
+                            <option>营口港集装箱封箱发运</option>
+                            <option>营口港散粮散船发运</option>
+                            <option>产地火车皮直发</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-bold text-gray-700 mb-1">企业/厂名</label>
+                        <input type="text" required class="w-full bg-gray-50 border border-gray-300 rounded p-2.5 text-gray-900">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-gray-700 mb-1">联系电话/微信</label>
+                        <input type="text" required class="w-full bg-gray-50 border border-gray-300 rounded p-2.5 text-gray-900">
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-bold text-gray-700 mb-1">目的港或送达省份（及水分蛋白特殊要求）</label>
+                    <textarea rows="2" class="w-full bg-gray-50 border border-gray-300 rounded p-2.5 text-gray-900" placeholder="例如：发往广东蛇口港，要求大豆粗蛋白≥41.5%..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-agri-800 hover:bg-agri-900 text-white font-bold py-3 rounded-lg text-sm transition">
+                    立即提交询价单给丰溢粮油
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FLOATING CONTACT WIDGETS -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        <button onclick="toggleWeChatModal()" class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-xl shadow-2xl transition transform hover:scale-110 relative group">
+            <i class="fa-brands fa-weixin"></i>
+            <span class="absolute right-14 bg-gray-900 text-white text-[10px] font-bold px-2.5 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow">微信加经理</span>
+        </button>
+        <button onclick="openRfqModal()" class="w-12 h-12 bg-harvest-500 text-agri-900 rounded-full flex items-center justify-center text-lg shadow-2xl transition transform hover:scale-110 relative group">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <span class="absolute right-14 bg-gray-900 text-white text-[10px] font-bold px-2.5 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow">快速询价单</span>
+        </button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-agri-900 text-gray-400 text-xs py-12 px-4 border-t border-agri-800 mt-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="space-y-3">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-white p-1 rounded-lg border border-amber-300">
+                        <img src="watermarked_img_16954814780196787762.jpg" alt="丰溢粮油 Logo" class="w-8 h-8 object-contain rounded">
+                    </div>
+                    <div class="font-bold text-white text-base">丰溢粮油有限公司</div>
+                </div>
+                <p class="text-gray-400 leading-relaxed text-xs">
+                    深耕黑龙江黑土产区与俄罗斯边贸粮源，依托辽宁营口港/鲅鱼圈物流枢纽，为全国饲料与深加工企业提供高效南粮北运发运保障。
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white uppercase mb-3">丰溢粮种线</h4>
+                <ul class="space-y-2">
+                    <li><a href="#products" class="hover:text-harvest-500 transition">丰溢黑龙江高蛋白非转基因大豆</a></li>
+                    <li><a href="#products" class="hover:text-harvest-500 transition">丰溢俄罗斯进口非转基因大豆/玉米</a></li>
+                    <li><a href="#products" class="hover:text-harvest-500 transition">丰溢黑龙江二等高容重黄玉米</a></li>
+                    <li><a href="#products" class="hover:text-harvest-500 transition">营口港集装箱压箱打包服务</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white uppercase mb-3">发运与物流枢纽</h4>
+                <ul class="space-y-2">
+                    <li><a href="#media-gallery" class="hover:text-harvest-500 transition">辽宁营口港 / 鲅鱼圈丰溢堆场</a></li>
+                    <li><a href="#media-gallery" class="hover:text-harvest-500 transition">绥芬河 / 黑河俄罗斯边贸口岸</a></li>
+                    <li><a href="#freight-calculator" class="hover:text-harvest-500 transition">广东/山东/川渝水运平仓测算</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white uppercase mb-3">联系丰溢发运部</h4>
+                <div class="space-y-2">
+                    <div><i class="fa-solid fa-location-dot text-harvest-500"></i> 辽宁省营口市鲅鱼圈区港口物流园区88号</div>
+                    <div><i class="fa-solid fa-phone text-harvest-500"></i> 400-888-9988 / 0417-88886666</div>
+                    <div><i class="fa-solid fa-envelope text-harvest-500"></i> trade@fengyi-grain.cn</div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-agri-800 mt-8 pt-6 flex justify-between items-center text-[11px] text-gray-500">
+            <div>© 2026 丰溢粮油有限公司 版权所有 (Fengyi Grain & Oil Co., Ltd.)</div>
+            <div>辽ICP备 20260999号-1 | 国内大宗粮食交易合规展示平台</div>
+        </div>
+    </footer>
+
+    <script>
+        // DCE Real-time Market Data Simulation (Domestic Chinese Yuan)
+        const tickerData = [
+            { name: "丰溢营口港大豆现货平仓", price: 3950, change: "+15" },
+            { name: "大商所豆一期货主力合约 (a2609)", price: 4120, change: "+22" },
+            { name: "丰溢营口港二等玉米平仓", price: 2320, change: "-5" },
+            { name: "大商所玉米期货主力合约 (c2609)", price: 2280, change: "+8" },
+            { name: "丰溢俄罗斯进口非转基因大豆", price: 3820, change: "+10" },
+            { name: "蛇口港东北玉米到港平仓价", price: 2480, change: "0" }
+        ];
+
+        // Products Dataset (Domestic Focus with Fengyi Brand Name)
+        const productsData = [
+            {
+                id: "soy-hlj-1",
+                category: "soy-hlj",
+                title: "丰溢·黑龙江一等高蛋白非转基因大豆",
+                tag: "黑土食用级",
+                price: 3950,
+                specs: {
+                    粗蛋白: "≥ 41.5%",
+                    水分: "≤ 13.0%",
+                    完整粒: "≥ 99.5%",
+                    杂质: "≤ 0.5%"
+                },
+                description: "产自丰溢黑龙江黑土核心区，籽粒饱满圆润，蛋白质含量高，适合腐竹、豆腐、豆奶粉等食品加工厂。",
+                hub: "营口港集装箱发运"
+            },
+            {
+                id: "soy-rus-1",
+                category: "soy-rus",
+                title: "丰溢·俄罗斯进口非转基因大豆",
+                tag: "高油/高蛋白关单粮",
+                price: 3820,
+                specs: {
+                    粗蛋白: "≥ 40.0%",
+                    粗脂肪: "≥ 20.5%",
+                    水分: "≤ 12.5%",
+                    转基因PCR: "阴性 (0.00%)"
+                },
+                description: "通过黑河/绥芬河口岸通关，关单齐全，具备完备的海关检疫证书，性价比极高。",
+                hub: "绥芬河口岸 / 营口港"
+            },
+            {
+                id: "corn-hlj-1",
+                category: "corn",
+                title: "丰溢·黑龙江二等高容重黄玉米",
+                tag: "大宗饲料粮",
+                price: 2320,
+                specs: {
+                    容重: "≥ 720 g/L",
+                    水分: "≤ 14.0%",
+                    不完善粒: "≤ 3.0%",
+                    霉变率: "≤ 1.0%"
+                },
+                description: "黑龙江黄金玉米带丰溢基地集中采购，塔烘干粒，容重高、角质率高，是大型饲料厂优选原粮。",
+                hub: "营口港散粮船/集装箱"
+            },
+            {
+                id: "corn-rus-1",
+                category: "soy-rus",
+                title: "丰溢·俄罗斯边贸二等黄玉米",
+                tag: "非转基因饲料用",
+                price: 2280,
+                specs: {
+                    容重: "≥ 710 g/L",
+                    水分: "≤ 14.5%",
+                    粗蛋白: "≥ 8.5%",
+                    杂质: "≤ 1.0%"
+                },
+                description: "俄罗斯远东地区自然生长玉米，非转基因，无黄曲霉毒素超标隐患，价格优势明显。",
+                hub: "满洲里 / 营口港"
+            },
+            {
+                id: "soy-hlj-2",
+                category: "soy-hlj",
+                title: "丰溢·黑龙江特等有机非转基因大豆",
+                tag: "国标有机认证",
+                price: 4350,
+                specs: {
+                    粗蛋白: "≥ 42.5%",
+                    水分: "≤ 12.5%",
+                    有机证书: "具备完备追溯码",
+                    杂质: "≤ 0.2%"
+                },
+                description: "丰溢粮油专有有机种植基地直供，专供高品质出口级豆制品及有机食品加工。",
+                hub: "营口港吨袋集装箱"
+            }
+        ];
+
+        // Render DCE Ticker
+        function renderTicker() {
+            const container = document.getElementById('tickerContainer');
+            let html = '';
+            const list = [...tickerData, ...tickerData];
+            list.forEach(item => {
+                const isUp = item.change.startsWith('+');
+                const badgeColor = isUp ? 'text-red-400' : (item.change === '0' ? 'text-gray-400' : 'text-green-400');
+                html += `
+                    <div class="inline-flex items-center space-x-2">
+                        <span class="text-gray-300 font-medium">${item.name}:</span>
+                        <span class="font-bold text-white">¥${item.price} / 吨</span>
+                        <span class="${badgeColor} font-bold text-[10px]">${item.change}</span>
+                        <span class="text-gray-600 px-2">|</span>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // Render Product Cards
+        function renderProducts(cat = 'all') {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+
+            productsData.forEach(prod => {
+                if (cat !== 'all' && prod.category !== cat) return;
+
+                const card = `
+                    <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between group">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="bg-agri-50 text-agri-800 text-xs font-bold px-2.5 py-1 rounded-md border border-agri-100">${prod.tag}</span>
+                                <span class="bg-blue-50 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded flex items-center gap-1 border border-blue-100">
+                                    <i class="fa-solid fa-truck"></i> ${prod.hub}
+                                </span>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-agri-800 transition">${prod.title}</h3>
+                            <p class="text-xs text-gray-500 mb-4">${prod.description}</p>
+
+                            <div class="grid grid-cols-2 gap-2 text-xs bg-slate-50 p-3 rounded-xl border border-gray-100 mb-4">
+                                ${Object.entries(prod.specs).map(([k, v]) => `
+                                    <div>
+                                        <span class="text-gray-400 font-medium">${k}:</span>
+                                        <span class="font-bold text-gray-800 block">${v}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="px-6 py-4 bg-slate-50 border-t border-gray-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-gray-400 block font-bold uppercase">营口港车船板平仓价</span>
+                                <span class="text-lg font-black text-agri-800">¥${prod.price.toLocaleString()} <span class="text-xs font-normal">/ 吨</span></span>
+                            </div>
+
+                            <div class="flex gap-2">
+                                <button onclick="prepopulateRfq('${prod.title}')" class="bg-agri-800 hover:bg-agri-900 text-white px-4 py-2 rounded-lg text-xs font-bold transition shadow flex items-center gap-1">
+                                    询价单 <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        // Filter Products Handler
+        function filterProducts(cat) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.classList.add('bg-agri-800', 'text-white');
+                    btn.classList.remove('bg-white', 'text-gray-700');
+                } else {
+                    btn.classList.remove('bg-agri-800', 'text-white');
+                    btn.classList.add('bg-white', 'text-gray-700');
+                }
+            });
+            renderProducts(cat);
+        }
+
+        // Calculate Domestic Freight
+        function calculateDomesticFreight() {
+            const basePrice = parseFloat(document.getElementById('calcProduct').value);
+            const volume = parseInt(document.getElementById('calcVolume').value);
+            const destFreight = parseFloat(document.getElementById('calcDestination').value);
+            const packCost = parseFloat(document.getElementById('calcPackaging').value);
+
+            document.getElementById('volumeDisplay').innerText = `${volume.toLocaleString()} 吨`;
+
+            const unitPrice = basePrice + destFreight + packCost;
+            const totalPrice = unitPrice * volume;
+
+            document.getElementById('outBasePrice').innerText = `¥${basePrice.toLocaleString()} / 吨`;
+            document.getElementById('outFreightPrice').innerText = `¥${destFreight.toLocaleString()} / 吨`;
+            document.getElementById('outPackPrice').innerText = `¥${packCost.toLocaleString()} / 吨`;
+            document.getElementById('outUnitPrice').innerText = `¥${unitPrice.toLocaleString()} / 吨`;
+            document.getElementById('outTotalValue').innerText = `¥${totalPrice.toLocaleString()}`;
+        }
+
+        // AI Chat Handler
+        function askAiPrompt(q) {
+            document.getElementById('chatInput').value = q;
+            handleAiSubmit(new Event('submit'));
+        }
+
+        function handleAiSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const chatHistory = document.getElementById('chatHistory');
+            chatHistory.innerHTML += `
+                <div class="bg-harvest-500 text-agri-900 p-2.5 rounded-lg font-bold max-w-[85%] ml-auto text-right">
+                    ${text}
+                </div>
+            `;
+            input.value = '';
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+
+            setTimeout(() => {
+                let ans = "关于丰溢粮油营口港平仓现货及发运事宜，您可以随时联系我们的丰溢发运经理。";
+                if (text.includes('蛋白') || text.includes('水分') || text.includes('黑龙江')) {
+                    ans = "<strong>丰溢粮油黑龙江大豆保障：</strong> 粗蛋白均可保证在 41.5% 以上，水分严格控制在 13.0% 扣头安全水分内。每车均带烘干塔及丰溢质检单。";
+                } else if (text.includes('俄罗斯') || text.includes('检疫') || text.includes('非转基因')) {
+                    ans = "<strong>丰溢俄罗斯进口粮检疫：</strong> 俄罗斯大豆及玉米均经过绥芬河/满洲里海关双重检验，附带完备的《中华人民共和国海关入境货物检验检疫证明》，100% 确保非转基因。";
+                } else if (text.includes('集装箱') || text.includes('广东') || text.includes('山东') || text.includes('天')) {
+                    ans = "<strong>丰溢营口港集装箱航效：</strong> 发往山东青岛/日照港海运约 2-3 天，发往广东蛇口/南沙港约 5-6 天，采用集装箱压箱防潮包装，送达工厂完好率 100%。";
+                }
+
+                chatHistory.innerHTML += `
+                    <div class="bg-agri-800/90 p-3 rounded-lg border border-agri-700 text-gray-200 max-w-[90%] space-y-1">
+                        <div class="text-[10px] text-harvest-500 font-bold">丰溢粮油 AI 客服</div>
+                        <div>${ans}</div>
+                    </div>
+                `;
+                chatHistory.scrollTop = chatHistory.scrollHeight;
+            }, 500);
+        }
+
+        // Modals Logic
+        function openVideoModal(title, type) {
+            document.getElementById('videoModalTitle').innerHTML = `<i class="fa-solid fa-circle-play"></i> ${title}`;
+            
+            const labelMap = {
+                'farm': '正在播放：丰溢粮油黑龙江黑土农场大机械收割现场视频',
+                'russia': '正在播放：丰溢俄罗斯边贸粮入关通关与检疫抽样现场',
+                'yingkou': '正在播放：丰溢粮油辽宁营口港/鲅鱼圈集装箱压箱装船实拍'
+            };
+            document.getElementById('videoSimLabel').innerText = labelMap[type] || '现场视频加载中...';
+            document.getElementById('videoModal').classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        function toggleWeChatModal() {
+            document.getElementById('wechatModal').classList.remove('hidden');
+        }
+
+        function openRfqModal() {
+            document.getElementById('rfqModal').classList.remove('hidden');
+        }
+
+        function prepopulateRfq(title) {
+            document.getElementById('rfqCommodity').value = title;
+            openRfqModal();
+        }
+
+        function requestQuoteFromCalc() {
+            const prodText = document.getElementById('calcProduct').options[document.getElementById('calcProduct').selectedIndex].text;
+            const volume = document.getElementById('calcVolume').value;
+            document.getElementById('rfqCommodity').value = prodText;
+            document.getElementById('rfqVolume').value = volume;
+            openRfqModal();
+        }
+
+        function handleRfqSubmit(e) {
+            e.preventDefault();
+            alert('询价单已接收！丰溢粮油营口港发运经理将在2小时内与您对接实盘平仓报价。');
+            closeModal('rfqModal');
+        }
+
+        // Window Init
+        window.onload = function() {
+            renderTicker();
+            renderProducts();
+            calculateDomesticFreight();
+        };
+    </script>
+</body>
+</html>
